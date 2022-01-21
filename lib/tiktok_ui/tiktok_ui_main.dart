@@ -11,10 +11,10 @@ class _TikTokUiMainState extends State<TikTokUiMain> {
 
   List pages = [
     TiktokHomePage(),
-    Text('2'),
-    Text('3'),
-    Text('4'),
-    Text('5'),
+    Text('Discover'),
+    Text('Add'),
+    Text('Chat'),
+    Text('Profile'),
   ];
 
   @override
@@ -69,6 +69,6 @@ class _TikTokUiMainState extends State<TikTokUiMain> {
             BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
           ],
         ),
-        body: pages[selectedIndex]);
+        body: Center(child: pages[selectedIndex]));
   }
 }
