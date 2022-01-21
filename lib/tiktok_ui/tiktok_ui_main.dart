@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:github_testing/tiktok_ui/pages/tiktok_homepage.dart';
 
 class TikTokUiMain extends StatefulWidget {
   @override
@@ -9,7 +10,7 @@ class _TikTokUiMainState extends State<TikTokUiMain> {
   int selectedIndex = 0;
 
   List pages = [
-    Text('1'),
+    TiktokHomePage(),
     Text('2'),
     Text('3'),
     Text('4'),
@@ -18,8 +19,15 @@ class _TikTokUiMainState extends State<TikTokUiMain> {
 
   @override
   Widget build(BuildContext context) {
+    var h = MediaQuery.of(context).size.height;
+    var w = MediaQuery.of(context).size.width;
+
     return Scaffold(
         bottomNavigationBar: BottomNavigationBar(
+          backgroundColor: Colors.black,
+          selectedItemColor: Colors.white,
+          unselectedItemColor: Colors.grey,
+          type: BottomNavigationBarType.fixed,
           currentIndex: selectedIndex,
           onTap: (index) {
             setState(() {
@@ -31,16 +39,36 @@ class _TikTokUiMainState extends State<TikTokUiMain> {
             BottomNavigationBarItem(
                 icon: Icon(Icons.search), label: "Discover"),
             BottomNavigationBarItem(
-              icon: Container(),
+              label: "",
+              icon: Container(
+                height: h * 0.05,
+                width: w * 0.135,
+                child: Center(
+                  child: Container(
+                    // color: Colors.white,
+                    height: h * 0.05,
+                    width: w * 0.113,
+                    child: Icon(
+                      Icons.add,
+                      size: 30,
+                      color: Colors.black,
+                    ),
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10)),
+                  ),
+                ),
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                    gradient:
+                        LinearGradient(colors: [Colors.blue, Colors.red])),
+              ),
             ),
-            BottomNavigationBarItem(icon: Icon(Icons.inbox), label: "inbox"),
+            BottomNavigationBarItem(icon: Icon(Icons.chat), label: "inbox"),
             BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
           ],
         ),
         body: pages[selectedIndex]);
-  }
-
-  Container pages2(Color c) {
-    return Container(height: double.infinity, width: double.infinity, color: c);
   }
 }
