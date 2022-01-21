@@ -1,38 +1,46 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
-class TikTokUiMain extends StatelessWidget {
-  const TikTokUiMain({Key? key}) : super(key: key);
+class TikTokUiMain extends StatefulWidget {
+  @override
+  State<TikTokUiMain> createState() => _TikTokUiMainState();
+}
+
+class _TikTokUiMainState extends State<TikTokUiMain> {
+  int selectedIndex = 0;
+
+  List pages = [
+    Text('1'),
+    Text('2'),
+    Text('3'),
+    Text('4'),
+    Text('5'),
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: PageView(
-        scrollDirection: Axis.vertical,
-        children: [
-          pages(Colors.amber),
-          pages(Colors.black),
-          pages(Colors.green),
-          pages(Colors.orange),
-          Text("saasassasas"),
-          Center(
-            child: Container(
-              child: Column(
-                children: <Widget>[
-                  Container(),
-                  Container(),
-                  Text(""),
-                  Text(""),
-                ],
-              ),
+        bottomNavigationBar: BottomNavigationBar(
+          currentIndex: selectedIndex,
+          onTap: (index) {
+            setState(() {
+              selectedIndex = index;
+            });
+          },
+          items: [
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: "home"),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.search), label: "Discover"),
+            BottomNavigationBarItem(
+              icon: Container(),
             ),
-          ),
-        ],
-      ),
-    );
+            BottomNavigationBarItem(icon: Icon(Icons.inbox), label: "inbox"),
+            BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
+          ],
+        ),
+        body: pages[selectedIndex]);
   }
 
-  Container pages(Color c) {
+  Container pages2(Color c) {
     return Container(height: double.infinity, width: double.infinity, color: c);
   }
 }
