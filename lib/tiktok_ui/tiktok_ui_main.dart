@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:github_testing/tiktok_ui/pages/tiktok_homepage.dart';
+import 'package:sizer/sizer.dart';
 
 class TikTokUiMain extends StatefulWidget {
   @override
@@ -41,13 +42,13 @@ class _TikTokUiMainState extends State<TikTokUiMain> {
             BottomNavigationBarItem(
               label: "",
               icon: Container(
-                height: h * 0.05,
-                width: w * 0.135,
+                height: 5.h,
+                width: 15.w,
                 child: Center(
                   child: Container(
                     // color: Colors.white,
-                    height: h * 0.05,
-                    width: w * 0.113,
+                    height: 5.h,
+                    width: 12.w,
                     child: Icon(
                       Icons.add,
                       size: 30,

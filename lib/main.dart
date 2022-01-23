@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:github_testing/assignments/bike_shop.dart';
 import 'package:github_testing/tiktok_ui/tiktok_ui_main.dart';
+import 'package:sizer/sizer.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,9 +12,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: TikTokUiMain(),
+    return Sizer(
+      builder: (c, i, _) => MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: BikeShop(),
+      ),
     );
   }
 }
