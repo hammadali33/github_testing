@@ -6,4 +6,4 @@ const kscondary = Colors.black;
 const ktertiary = Colors.grey;
 
 var text1 =
-    TextStyle(color: kscondary, fontSize: 22.sp, fontWeight: FontWeight.bold);
+    TextStyle(color: kscondary, fontSize: 20.sp, fontWeight: FontWeight.bold);

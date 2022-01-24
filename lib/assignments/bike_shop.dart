@@ -86,45 +86,41 @@ class _BikeShopState extends State<BikeShop> with TickerProviderStateMixin {
           Expanded(
             child: TabBarView(controller: _controller, children: [
               Container(
-                child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text("New Arrival", style: text1),
-                      SizedBox(
-                        height: 1.h,
-                      ),
-                      Container(
-                        height: 50.h,
-                        decoration: BoxDecoration(
-                          color: kprimary,
-                          borderRadius: BorderRadius.only(
-                              bottomLeft: Radius.circular(30),
-                              topLeft: Radius.circular(30)),
+                child: SingleChildScrollView(
+                  child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text("New Arrival", style: text1),
+                        SizedBox(
+                          height: 1.h,
                         ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(top: 8),
-                              child: Text(
+                        Container(
+                          height: 50.h,
+                          decoration: BoxDecoration(
+                            color: kprimary,
+                            borderRadius: BorderRadius.only(
+                                bottomLeft: Radius.circular(30),
+                                topLeft: Radius.circular(30)),
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Text(
                                 "All Terrain",
                                 style: text1,
                               ),
-                            ),
-                            Image.asset("assets/download.jpg"),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                ...generate_row(),
-                              ],
-                            ),
-                            Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 30),
-                              child: Row(
+                              Image.asset("assets/download.jpg"),
+                              Row(
                                 mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  ...generate_row(),
+                                ],
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
                                 children: [
                                   Text(
                                     "250,000",
@@ -133,6 +129,9 @@ class _BikeShopState extends State<BikeShop> with TickerProviderStateMixin {
                                         color: Colors.orange,
                                         fontWeight: FontWeight.bold),
                                   ),
+                                  SizedBox(
+                                    width: 2.w,
+                                  ),
                                   Icon(
                                     Icons.add_shopping_cart,
                                     color: ktertiary,
@@ -140,30 +139,30 @@ class _BikeShopState extends State<BikeShop> with TickerProviderStateMixin {
                                   ),
                                 ],
                               ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(
+                          height: 2.h,
+                        ),
+                        Text(
+                          "Best Sellers",
+                          style: text1,
+                        ),
+                        SizedBox(
+                          height: 2.h,
+                        ),
+                        Row(
+                          children: [
+                            mycontainer(),
+                            SizedBox(
+                              width: 4.w,
                             ),
+                            mycontainer(),
                           ],
                         ),
-                      ),
-                      // SizedBox(
-                      //   height: 2.h,
-                      // ),
-                      Text(
-                        "Best Sellers",
-                        style: text1,
-                      ),
-                      // SizedBox(
-                      //   height: 2.h,
-                      // ),
-                      Row(
-                        children: [
-                          mycontainer(),
-                          SizedBox(
-                            width: 4.w,
-                          ),
-                          mycontainer(),
-                        ],
-                      ),
-                    ]),
+                      ]),
+                ),
               ),
               Text(
                 "Kids",
