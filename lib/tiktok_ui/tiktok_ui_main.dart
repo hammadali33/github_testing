@@ -20,8 +20,8 @@ class _TikTokUiMainState extends State<TikTokUiMain> {
 
   @override
   Widget build(BuildContext context) {
-    var h = MediaQuery.of(context).size.height;
-    var w = MediaQuery.of(context).size.width;
+    // var h = MediaQuery.of(context).size.height;
+    // var w = MediaQuery.of(context).size.width;
 
     return Scaffold(
         bottomNavigationBar: BottomNavigationBar(
