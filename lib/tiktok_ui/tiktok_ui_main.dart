@@ -42,13 +42,13 @@ class _TikTokUiMainState extends State<TikTokUiMain> {
             BottomNavigationBarItem(
               label: "",
               icon: Container(
-                height: 5.h,
-                width: 15.w,
+                height: 4.h,
+                width: 12.w,
                 child: Center(
                   child: Container(
                     // color: Colors.white,
-                    height: 5.h,
-                    width: 12.w,
+                    height: 4.h,
+                    width: 10.w,
                     child: Icon(
                       Icons.add,
                       size: 30,
